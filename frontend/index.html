@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everything Brainmap</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header id="topbar">
+  <div id="brand">🧠 Everything <span>Brainmap</span></div>
+  <form id="search-form">
+    <input id="concept-input" type="text" placeholder="输入任意概念，例如：期权、光合作用、Transformer、复利……" autocomplete="off">
+    <button id="submit-btn" type="submit">生成脑图</button>
+  </form>
+  <div id="lang-toggle" role="group" aria-label="语言切换">
+    <button type="button" class="lang-opt active" data-lang="zh">中文</button>
+    <button type="button" class="lang-opt" data-lang="en">EN</button>
+  </div>
+</header>
+
+<div id="examples">
+  <span id="examples-label">试试看：</span>
+  <button class="chip" data-zh="Databricks" data-en="Databricks">Databricks</button>
+  <button class="chip" data-zh="期权" data-en="Options">期权</button>
+  <button class="chip" data-zh="光合作用" data-en="Photosynthesis">光合作用</button>
+  <button class="chip" data-zh="复利" data-en="Compound Interest">复利</button>
+  <button class="chip" data-zh="Presto / Trino SQL" data-en="Presto / Trino SQL">Presto/Trino</button>
+</div>
+
+<div id="status" class="hidden"></div>
+
+<nav id="breadcrumb" class="hidden"></nav>
+
+<main id="map-wrap">
+  <div id="viewport">
+    <div id="canvas">
+      <svg id="lines"></svg>
+      <div id="zone-top" class="zone zone-row"></div>
+      <div id="zone-left" class="zone zone-col"></div>
+      <div id="hub"></div>
+      <div id="zone-right" class="zone zone-col"></div>
+      <div id="zone-bottom" class="zone zone-row"></div>
+    </div>
+  </div>
+
+  <div id="zoom-controls">
+    <button id="zoom-in" title="放大">＋</button>
+    <button id="zoom-fit" title="适应屏幕">⤢</button>
+    <button id="zoom-out" title="缩小">－</button>
+  </div>
+
+  <div id="empty-state">
+    <p id="empty-main">输入一个概念，回车或点击「生成脑图」</p>
+    <p class="sub" id="empty-sub">脑图会围绕核心概念展开专属的知识框架，可以拖拽平移、滚轮缩放；点击分支标题可以深入钻取</p>
+  </div>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
