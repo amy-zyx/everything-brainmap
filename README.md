@@ -1,5 +1,7 @@
 # Everything Brainmap
 
+[English](README.en.md) | 中文
+
 输入任意概念，生成一张从宏观大图逐层展开到具体细节的可交互脑图，帮助新手快速建立认知框架和学习路径。
 
 - 后端：Python + FastAPI，调用 OpenAI API 生成结构化 Markdown 大纲
